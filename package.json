@@ -1,0 +1,60 @@
+{
+  "name": "samples-lib-react",
+  "version": "1.2.6",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Katumbela/react-library-validators-and-forms/blob/main/README_2.md"
+  },
+  "license": "ISC",
+  "description": "A library for react development which includes animations like slides , dynamic forms and some validators ",
+  "dependencies": {
+    "@testing-library/react": "^16.0.0",
+    "git-commit-lib": "^1.1.1",
+    "libphonenumber-js": "^1.11.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "keywords": [
+    "library",
+    "react",
+    "forms",
+    "validators",
+    "react validator",
+    "slider",
+    "carousel",
+    "animation",
+    "typescript"
+  ],
+  "author": "Joao Afonso Katombela",
+  "devDependencies": {
+    "@babel/preset-react": "^7.24.7",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "babel-jest": "^29.7.0",
+    "eslint": "^9.8.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.3.3",
+    "rollup": "^4.20.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "ts-jest": "^29.2.4",
+    "typescript": "^5.5.4"
+  }
+}
