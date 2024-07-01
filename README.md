@@ -29,7 +29,7 @@ Utiliza um modelo de regressão linear para prever o preço de casas com base em
 **Exemplo de Uso com `curl`:**
 
 ```sh
-curl -X POST https://predict-house-price.vercel.app/api/predict/house -H "Content-Type: application/json" -d '{
+curl -X POST https://predict-api.reputacao360.online/api/predict/house -H "Content-Type: application/json" -d '{
     "area": 2000,
     "bedrooms": 4,
     "bathrooms": 3
@@ -66,7 +66,7 @@ Utiliza um modelo de regressão para prever a produtividade agrícola com base e
 **Exemplo de Uso com `curl`:**
 
 ```sh
-curl -X POST https://predict-house-price.vercel.app/api/predict/agro -H "Content-Type: application/json" -d '{
+curl -X POST https://predict-api.reputacao360.online/api/predict/agro -H "Content-Type: application/json" -d '{
     "rainfall": 800,
     "temperature": 22,
     "humidity": 70
@@ -108,7 +108,7 @@ Utiliza um modelo de classificação para prever a probabilidade de rotatividade
 **Exemplo de Uso com `curl`:**
 
 ```sh
-curl -X POST https://predict-house-price.vercel.app/api/predict/hr -H "Content-Type: application/json" -d '{
+curl -X POST https://predict-api.reputacao360.online/api/predict/hr -H "Content-Type: application/json" -d '{
     "satisfaction_level": 0.5,
     "last_evaluation": 0.7,
     "number_project": 3,
@@ -150,7 +150,7 @@ Utiliza um modelo de regressão para prever a produção de manufatura com base 
 **Exemplo de Uso com `curl`:**
 
 ```sh
-curl -X POST https://predict-house-price.vercel.app/api/predict/manuf -H "Content-Type: application/json" -d '{
+curl -X POST https://predict-api.reputacao360.online/api/predict/manuf -H "Content-Type: application/json" -d '{
     "machine_id": 1,
     "temperature": 300,
     "pressure": 30
@@ -187,7 +187,7 @@ Utiliza um modelo de regressão para prever o preço de fechamento de ações co
 **Exemplo de Uso com `curl`:**
 
 ```sh
-curl -X POST https://predict-house-price.vercel.app/api/predict/finance -H "Content-Type: application/json" -d '{
+curl -X POST https://predict-api.reputacao360.online/api/predict/finance -H "Content-Type: application/json" -d '{
     "open": 100,
     "high": 105,
     "low": 95,
