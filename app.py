@@ -3,11 +3,11 @@ import joblib
 import numpy as np
 
 # Carregar os modelos
-model_house = joblib.load('house_price_model.pkl')
-model_agro = joblib.load('agro_yield_model.pkl')
-model_hr = joblib.load('hr_turnover_model.pkl')
-model_manuf = joblib.load('manuf_output_model.pkl')
-model_finance = joblib.load('finance_stock_model.pkl')
+model_house = joblib.load('./models/house_price_model.pkl')
+model_agro = joblib.load('./models/agro_yield_model.pkl')
+model_hr = joblib.load('./models/hr_turnover_model.pkl')
+model_manuf = joblib.load('./models/manuf_output_model.pkl')
+model_finance = joblib.load('./models/finance_stock_model.pkl')
 
 app = Flask(__name__)
 

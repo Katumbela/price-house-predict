@@ -25,5 +25,5 @@ model_finance = RandomForestRegressor()
 model_finance.fit(X_train_finance, y_train_finance)
 
 
-joblib.dump(model_finance, 'finance_stock_model.pkl')
+joblib.dump(model_finance, './models/finance_stock_model.pkl')
 print("Modelo de Finanças treinado e salvo como 'finance_stock_model.pkl'")

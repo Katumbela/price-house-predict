@@ -22,7 +22,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = LinearRegression()
 model.fit(X_train, y_train)
  
-joblib.dump(model, 'house_price_model.pkl')
+joblib.dump(model, './models/house_price_model.pkl')
 print("Modelo treinado e salvo como 'house_price_model.pkl'")
 
 # Taxa de câmbio USD para AOA
