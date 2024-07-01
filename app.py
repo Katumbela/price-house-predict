@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 import joblib
 import numpy as np
  
@@ -9,6 +9,11 @@ model_manuf = joblib.load('./models/manuf_output_model.pkl')
 model_finance = joblib.load('./models/finance_stock_model.pkl')
 
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 
 @app.route('/api/predict/house', methods=['POST'])
 def predict_house():

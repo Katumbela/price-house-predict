@@ -211,20 +211,7 @@ curl -X POST https://predict-house-price.vercel.app/api/predict/finance -H "Cont
 - **Recursos Humanos**: [HR Analytics](https://www.kaggle.com/datasets/ludobenistant/hr-analytics)
 - **Manufatura**: [Manufacturing Process](https://www.kaggle.com/datasets/philmohun/manufacturing-processes)
 - **Finanças**: [Stock Market Data](https://www.kaggle.com/datasets/szrlee/stock-time-series-20050101-to-20171231)
-
-### Executando a API
-
-1. Clone o repositório.
-2. Instale as dependências necessárias:
-    ```sh
-    pip install flask joblib scikit-learn pandas
-    ```
-3. Execute o script Python:
-    ```sh
-    python your_script_name.py
-    ```
-4. Acesse a API em `http://127.0.0.1:5000`.
-
+ 
 ### Testando a API
 
 Você pode testar a API usando `curl`, Postman ou qualquer outra ferramenta de sua preferência. Siga os exemplos fornecidos para cada endpoint.

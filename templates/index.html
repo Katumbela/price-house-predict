@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Market Prediction API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        code {
+            font-size: 14px;
+            color: #c7254e;
+        }
+
+        ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <center>
+        <img src="https://www.scnsoft.com/data-analytics/ml/machine-learning-consulting_cover-new.svg"
+            style="width: 300px;" alt="">
+        <br>
+
+        <h1>Multi-Market Prediction API - Made By <a href="http://github.com/Katombela" target="_blank"
+                rel="noopener noreferrer">Katombela</a></h1>
+
+        <p>Minhas redes sociais:
+            <a href="https://www.linkedin.com/in/joao-afonso-katumbela">LinkedIn</a>,
+            <a href="https://www.github.com/katumbela">GitHub</a>
+        </p>
+
+    </center>
+    <p>Esta API utiliza vários modelos de machine learning para prever diferentes aspectos em diversos mercados.</p>
+
+    <h2>Endpoints</h2>
+
+    <h3>1. Previsão de Preço de Casas</h3>
+    <p>Utiliza um modelo de regressão linear para prever o preço de casas com base em características como área, número
+        de quartos e número de banheiros.</p>
+    <p><strong>Endpoint:</strong> <code>/api/predict/house</code></p>
+    <p><strong>Método:</strong> <code>POST</code></p>
+    <p><strong>Exemplo de Entrada:</strong></p>
+    <pre><code>
+{
+    "area": 2000,
+    "bedrooms": 4,
+    "bathrooms": 3
+}
+    </code></pre>
+    <p><strong>Exemplo de Uso com <code>curl</code>:</strong></p>
+    <pre><code>
+curl -X POST https://predict-house-price.vercel.app/api/predict/house -H "Content-Type: application/json" -d '{
+    "area": 2000,
+    "bedrooms": 4,
+    "bathrooms": 3
+}'
+    </code></pre>
+    <p><strong>Resposta:</strong></p>
+    <pre><code>
+{
+    "predicted_price_usd": 400000.0,
+    "predicted_price_aoa": 320000000.0
+}
+    </code></pre>
+
+    <h3>2. Previsão de Produtividade Agrícola</h3>
+    <p>Utiliza um modelo de regressão para prever a produtividade agrícola com base em dados como precipitação,
+        temperatura e umidade.</p>
+    <p><strong>Endpoint:</strong> <code>/api/predict/agro</code></p>
+    <p><strong>Método:</strong> <code>POST</code></p>
+    <p><strong>Exemplo de Entrada:</strong></p>
+    <pre><code>
+{
+    "rainfall": 800,
+    "temperature": 22,
+    "humidity": 70
+}
+    </code></pre>
+    <p><strong>Exemplo de Uso com <code>curl</code>:</strong></p>
+    <pre><code>
+curl -X POST https://predict-house-price.vercel.app/api/predict/agro -H "Content-Type: application/json" -d '{
+    "rainfall": 800,
+    "temperature": 22,
+    "humidity": 70
+}'
+    </code></pre>
+    <p><strong>Resposta:</strong></p>
+    <pre><code>
+{
+    "predicted_yield": 3200.0
+}
+    </code></pre>
+
+    <h3>3. Previsão de Rotatividade de Funcionários</h3>
+    <p>Utiliza um modelo de classificação para prever a probabilidade de rotatividade de funcionários com base em vários
+        fatores.</p>
+    <p><strong>Endpoint:</strong> <code>/api/predict/hr</code></p>
+    <p><strong>Método:</strong> <code>POST</code></p>
+    <p><strong>Exemplo de Entrada:</strong></p>
+    <pre><code>
+{
+    "satisfaction_level": 0.5,
+    "last_evaluation": 0.7,
+    "number_project": 3,
+    "average_montly_hours": 150,
+    "time_spend_company": 3,
+    "Work_accident": 0,
+    "promotion_last_5years": 0,
+    "sales": 2,
+    "salary": 2
+}
+    </code></pre>
+    <p><strong>Exemplo de Uso com <code>curl</code>:</strong></p>
+    <pre><code>
+curl -X POST https://predict-house-price.vercel.app/api/predict/hr -H "Content-Type: application/json" -d '{
+    "satisfaction_level": 0.5,
+    "last_evaluation": 0.7,
+    "number_project": 3,
+    "average_montly_hours": 150,
+    "time_spend_company": 3,
+    "Work_accident": 0,
+    "promotion_last_5years": 0,
+    "sales": 2,
+    "salary": 2
+}'
+    </code></pre>
+    <p><strong>Resposta:</strong></p>
+    <pre><code>
+{
+    "turnover_probability": 0
+}
+    </code></pre>
+
+    <h3>4. Previsão de Produção na Manufatura</h3>
+    <p>Utiliza um modelo de regressão para prever a produção de manufatura com base em características como ID da
+        máquina, temperatura e pressão.</p>
+    <p><strong>Endpoint:</strong> <code>/api/predict/manuf</code></p>
+    <p><strong>Método:</strong> <code>POST</code></p>
+    <p><strong>Exemplo de Entrada:</strong></p>
+    <pre><code>
+{
+    "machine_id": 1,
+    "temperature": 300,
+    "pressure": 30
+}
+    </code></pre>
+    <p><strong>Exemplo de Uso com <code>curl</code>:</strong></p>
+    <pre><code>
+curl -X POST https://predict-house-price.vercel.app/api/predict/manuf -H "Content-Type: application/json" -d '{
+    "machine_id": 1,
+    "temperature": 300,
+    "pressure": 30
+}'
+    </code></pre>
+    <p><strong>Resposta:</strong></p>
+    <pre><code>
+{
+    "predicted_output": 500.0
+}
+    </code></pre>
+
+    <h3>5. Previsão de Fechamento de Ações Financeiras</h3>
+    <p>Utiliza um modelo de regressão para prever o preço de fechamento de ações com base em dados como preço de
+        abertura, preço máximo, preço mínimo e volume.</p>
+    <p><strong>Endpoint:</strong> <code>/api/predict/finance</code></p>
+    <p><strong>Método:</strong> <code>POST</code></p>
+    <p><strong>Exemplo de Entrada:</strong></p>
+    <pre><code>
+{
+    "open": 100,
+    "high": 105,
+    "low": 95,
+    "volume": 1000
+}
+    </code></pre>
+    <p><strong>Exemplo de Uso com <code>curl</code>:</strong></p>
+    <pre><code>
+curl -X POST https://predict-house-price.vercel.app/api/predict/finance -H "Content-Type: application/json" -d '{
+    "open": 100,
+    "high": 105,
+    "low": 95,
+    "volume": 1000
+}'
+    </code></pre>
+    <p><strong>Resposta:</strong></p>
+    <pre><code>
+{
+    "predicted_close": 102.0
+}
+    </code></pre>
+
+    <h2>Links para Datasets</h2>
+    <ul>
+
+        <li><strong>Recursos Humanos:</strong> <a href="https://www.kaggle.com/datasets/liujiaqi/hr-comma-sepcsv">HR
+                Analytics</a></li>
+        <li><strong>Finanças:</strong> <a
+                href="https://www.kaggle.com/datasets/szrlee/stock-time-series-20050101-to-20171231">Stock Market
+                Data</a></li>
+    </ul>
+
+    <h2>Testando a API</h2>
+    <p>Você pode testar a API usando <code>curl</code>, Postman ou qualquer outra ferramenta de sua preferência. Siga os
+        exemplos fornecidos para cada endpoint.</p>
+
+    <p>Este README cobre todos os endpoints da API, como utilizá-los e onde encontrar os datasets para treinamento dos
+        modelos.</p>
+</body>
+
+</html>
