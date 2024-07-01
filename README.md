@@ -1,4 +1,4 @@
-﻿Claro! Aqui está um README melhorado que inclui todas as rotas da API para previsão de preços de casas, produtividade agrícola, rotatividade de funcionários, produção na manufatura e fechamento de ações financeiras.
+﻿ Rotas da API para previsão de preços de casas, produtividade agrícola, rotatividade de funcionários, produção na manufatura e fechamento de ações financeiras.
 
 ---
 
