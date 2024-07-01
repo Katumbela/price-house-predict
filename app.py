@@ -1,10 +1,9 @@
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
-
-# Carregar os modelos
+ 
 model_house = joblib.load('./models/house_price_model.pkl')
-model_agro = joblib.load('./models/agro_yield_model.pkl')
+#model_agro = joblib.load('./models/agro_yield_model.pkl')
 model_hr = joblib.load('./models/hr_turnover_model.pkl')
 model_manuf = joblib.load('./models/manuf_output_model.pkl')
 model_finance = joblib.load('./models/finance_stock_model.pkl')
@@ -16,19 +15,22 @@ def predict_house():
     data = request.get_json(force=True)
     features = [data['area'], data['bedrooms'], data['bathrooms']]
     prediction_usd = model_house.predict([features])
-    exchange_rate = 800  # 1 USD = 800 AOA
+    exchange_rate = 870
     prediction_aoa = prediction_usd[0] * exchange_rate
     return jsonify({
         'predicted_price_usd': prediction_usd[0],
         'predicted_price_aoa': prediction_aoa
     })
 
+"""
 @app.route('/api/predict/agro', methods=['POST'])
 def predict_agro():
     data = request.get_json(force=True)
     features = [data['rainfall'], data['temperature'], data['humidity']]
     prediction = model_agro.predict([features])
     return jsonify({'predicted_yield': prediction[0]})
+
+"""
 
 @app.route('/api/predict/hr', methods=['POST'])
 def predict_hr():
@@ -52,6 +54,7 @@ def predict_finance():
     features = [data['open'], data['high'], data['low'], data['volume']]
     prediction = model_finance.predict([features])
     return jsonify({'predicted_close': prediction[0]})
+
 
 if __name__ == '__main__':
     app.run(debug=True)

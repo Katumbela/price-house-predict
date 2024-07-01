@@ -2,8 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import joblib
-
-# Dados de treinamento
+ 
 data = {
     'area': [1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900],
     'bedrooms': [3, 3, 2, 4, 3, 4, 5, 3, 2, 4, 3, 4, 3, 2, 5],
@@ -24,9 +23,8 @@ model.fit(X_train, y_train)
  
 joblib.dump(model, './models/house_price_model.pkl')
 print("Modelo treinado e salvo como 'house_price_model.pkl'")
-
-# Taxa de câmbio USD para AOA
-exchange_rate = 800  # 1 USD = 800 AOA
+ 
+exchange_rate = 860
 
 
 predictions_usd = model.predict(X_test)
