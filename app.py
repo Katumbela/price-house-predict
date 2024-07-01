@@ -40,11 +40,21 @@ def predict_agro():
 @app.route('/api/predict/hr', methods=['POST'])
 def predict_hr():
     data = request.get_json(force=True)
+    print("Dados recebidos:", data)
     features = [data['satisfaction_level'], data['last_evaluation'], data['number_project'], 
                 data['average_montly_hours'], data['time_spend_company'], data['Work_accident'], 
                 data['promotion_last_5years'], data['sales'], data['salary']]
+    print("Features utilizadas:", features)
+    
     prediction = model_hr.predict([features])
-    return jsonify({'turnover_probability': prediction[0]})
+    print("Predição do modelo:", prediction)
+    
+    # Convertendo para float para garantir que seja serializável para JSON
+    prediction_value = float(prediction[0])
+    return jsonify({'turnover_probability': prediction_value})
+
+
+
 
 @app.route('/api/predict/manuf', methods=['POST'])
 def predict_manuf():
