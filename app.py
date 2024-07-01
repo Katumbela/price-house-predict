@@ -6,8 +6,8 @@ model = joblib.load('house_price_model.pkl')
 
 app = Flask(__name__)
 
-# Taxa de câmbio USD para AOA
-exchange_rate = 860  # 1 USD = 860 AOA
+# Contando com a taxa de cambio de 860Kz
+exchange_rate = 860  
 
 @app.route('/api/predict', methods=['POST'])
 def predict():
