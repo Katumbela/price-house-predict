@@ -26,7 +26,6 @@ print("Modelo treinado e salvo como 'house_price_model.pkl'")
  
 exchange_rate = 860
 
-
 predictions_usd = model.predict(X_test)
 predictions_aoa = predictions_usd * exchange_rate
  
